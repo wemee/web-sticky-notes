@@ -74,15 +74,17 @@
 
                 .memo-note textarea {
                     width: 100%;
+                    height: calc(100% - 30px);
                     border: none;
                     background: transparent;
                     resize: none;
                     font-family: inherit;
                     font-size: inherit;
                     outline: none;
-                    min-height: 40px;
+                    box-sizing: border-box;
                     cursor: text;
                 }
+
 
                 .memo-note .memo-controls {
                     display: flex;
@@ -244,7 +246,7 @@
                     color: #1976d2;
                 }
             `;
-            
+
             try {
                 document.head.appendChild(style);
             } catch (error) {
@@ -554,7 +556,7 @@
                     // 檢查是否點擊在縮放區域（右下角 15x15 像素）
                     const rect = element.getBoundingClientRect();
                     const isInResizeArea = (
-                        e.clientX >= rect.right - 15 && 
+                        e.clientX >= rect.right - 15 &&
                         e.clientY >= rect.bottom - 15
                     );
 
@@ -682,4 +684,3 @@
     }
 
 })();
-
